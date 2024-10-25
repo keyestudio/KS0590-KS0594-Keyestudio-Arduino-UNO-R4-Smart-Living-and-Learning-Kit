@@ -1458,6 +1458,10 @@ After uploading the code, unplug the USB cable and wire up. Connect the board to
 
 **6. Code Explanation**
 
+| ledPins[]|Set pins for multiple leds|
+| :--: | :--: |
+| sizeof(a); | “a” is an array with 9 int numbers, sizeof(a) is the total number of bytes stored in a, which is 9*4=36.|
+
 Please refer to Project 04.
 
 ---
@@ -1787,6 +1791,14 @@ After uploading the code, unplug the USB cable and wire up. Connect the board to
 
 **7. Code Explanation**
 
+while(1){ } 
+
+Codes in {} will be operated repeatedly。
+
+void digital(void) 
+
+This is a user-defined function. C functions can be divided into library functions and user-defined functions. The former ones are provided by the system for users that can be directly called, while the latter ones are written by users。
+
 Please refer to Project 05 and Project 06.
 
 ---
@@ -2005,6 +2017,14 @@ After uploading the code, unplug the USB cable and wire up. Connect the board to
 ---
 
 **7. Code Explanation**
+
+unsigned char num
+
+"unsigned" indicates an unsigned type; char indicates that the num is a character, that is, a static unsigned character is defined as num. Variables of char account for 2 bytes.
+
+unsigned char num[17][8]
+
+This is a two-dimensional array that includes rows and columns (but the storage is still continuous); Data type Array name [number of rows][number of columns]={{values of row element},{values of row element}};
 
 Please refer to Project 05 and Project 06.
 
@@ -5367,6 +5387,8 @@ After uploading the code, unplug the USB cable and wire up. Connect the board to
 
 Approach the IC card and key chain to the sensing area of the RFID module, and the serial monitor shows the read values of the RFID module.
 
+![Img](./media/img-20241025095630.png)
+
 ![Img](./media/img-20240829141154.png)
 
 **The values of IC cards and key chains are unique. Each one is different.** <span style="background:#ff0;color:#000">Please write down your UID of them, as they will be useful later.</span>
@@ -5472,7 +5494,21 @@ Insert the TF card into the card slot on the MP3 module, and then connect the co
 
 ![Img](./media/img-20240829145105.png)
 
-Click "**My Computer (This PC)**" and a new USB flash drive will appear. Open it and copy and paste (or directly drag) the audio folder "<span style="color: rgb(0, 209, 0);">01</span>" and "<span style="color: rgb(0, 209, 0);">02</span>" into TF card (USB flash drive).
+Click "**My computer (This PC)**" and you can see the "**U disk**". Choose "**U disk**" and the dialog box appears. Click "**Properties**" to check whether the TF card file system is "**FAT32**". If it is, it succeeds.
+
+![Img](./media/img-20241025085441.png)
+
+![Img](./media/img-20241025085907.png)
+
+![Img](./media/img-20241025090023.png)
+
+If the file system of the TF card is not "**FAT32**", modify the file system of the TF card. Click "**U disk**" and the dialog box appears. Select "**Format**" and click "**FAT(default)**" to select "**FAT32**", and click "**Start**" to format. In this way, the file system "**FAT**" of the TF card is modified to "**FAT32**".
+
+![Img](./media/img-20241025090309.png)
+
+![Img](./media/img-20241025090452.png)
+
+Click "**My Computer (This PC)**" once more. Open it and copy and paste (or directly drag) the audio folder "<span style="color: rgb(0, 209, 0);">01</span>" and "<span style="color: rgb(0, 209, 0);">02</span>" into TF card (USB flash drive).
 
 ![Img](./media/img-20240829145806.png)
 
@@ -5499,6 +5535,8 @@ We control audio playback in the TF card via the buttons on the MP3 module.
 ![Img](./media/img-20240903143738.png)
 
 ![Img](./media/img-20240903142833.png)
+
+<span style="color: rgb(255, 76, 65);">**Tip:** After wiring up, connect the small speaker to the S-OUT (two pins) on the MP3 module.</span>
 
 **Button function description:**
 
@@ -7324,6 +7362,8 @@ Please refer to Project 14, Project 28 and Project 37.
 
 ![Img](./media/img-20240918160019.png)
 
+<span style="color: rgb(255, 76, 65);">**ATTENTION: Only UNO R4 WiFi board boasts a 12X8 LED matrix, while UNO R4 Minima does not. So this project requires UNO R4 WiFi board**.</span>
+
 ---
 
 **1. Overview**
@@ -7334,9 +7374,9 @@ In previous experiments, we have learned how joystick works and how the UNO R4 c
 
 **2. Components**
 
-| ![Img](./media/KS5016.png) |![Img](./media/img-20240829093034.png)|![Img](./media/img-20240826101759.png)|![Img](./media/img-20240823161128.png)|
+| ![Img](./media/KS5016a.png) |![Img](./media/img-20240829093034.png)|![Img](./media/img-20240826101759.png)|![Img](./media/img-20240823161128.png)|
 | ------------------------ | ------------------------ | ---------------------------- |---------------------------- |
-|UNO R4 WiFi/Minima main board (either-or)| joystick x1 | DuPont wires |USB cable x1|
+|UNO R4 WiFi main board x1| joystick x1 | DuPont wires |USB cable x1|
 
 ---
 
@@ -8539,6 +8579,8 @@ The principle is very simple. In the sensor area on the RFID RC522 module, we us
 
 ![Img](./media/img-20240911160654.png)
 
+<span style="color: rgb(255, 76, 65);">**Tip:** After wiring up, connect the small speaker to the S-OUT (two pins) on the MP3 module.</span>
+
 ---
 
 **4. Code Flow**
@@ -8724,6 +8766,8 @@ In this project, we combine the HC-SR04 ultrasonic sensor, MP3 module and IIC 16
 
 ![Img](./media/img-20240911162619.png)
 
+<span style="color: rgb(255, 76, 65);">**Tip:** After wiring up, connect the small speaker to the S-OUT (two pins) on the MP3 module.</span>
+
 ---
 
 **4. Code Flow**
@@ -8896,6 +8940,8 @@ We have learned how the LM35 temperature sensor, the IIC 1602 LCD display, the M
 ![Img](./media/img-20240911170851.png)
 
 ![Img](./media/img-20240911171237.png)
+
+<span style="color: rgb(255, 76, 65);">**Tip:** After wiring up, connect the small speaker to the S-OUT (two pins) on the MP3 module.</span>
 
 ---
 
@@ -9547,6 +9593,8 @@ In previous experiments, we have understood the WiFi function of the ESP32 modul
 **Wiring diagram:**
 
 ![Img](./media/img-20241008114140.png)
+
+<span style="color: rgb(255, 76, 65);">**Tip:** After wiring up, connect the small speaker to the S-OUT (two pins) on the MP3 module.</span>
 
 ---
 
